@@ -1,7 +1,7 @@
 var todayDay = document.querySelector("#currentDay");
 var timeBlock = document.getElementsByClassName("time-block");
 var saveBtn =document.getElementsByClassName(".saveBtn")
-let currentHour = moment().format("h:mm:ss a");
+let currentHour = moment().format("H");
 // the current time/day funtion
 var time =function() {
     var today = $(todayDay).find()
@@ -10,6 +10,7 @@ var time =function() {
 }
 
 var colorcode = function() {
+
   $(".time-block").each( function(){
       var timeTest = parseInt($(this).attr("id"));
       hour =parseInt(currentHour);
