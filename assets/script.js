@@ -1,10 +1,7 @@
 var todayDay = document.querySelector("#currentDay");
-// let currentHour = moment().format("hh:mm:ss a");
-
 // the current time/day funtion
 var time = function () {
-    var today = $(todayDay).find()
-    var date = moment(today).format("dddd , MMM Do YYYY")
+    var date = moment().format("dddd , MMM Do YYYY")
     todayDay.textContent = date;
 }
 // sets the textarea to represent past/future/present
@@ -12,18 +9,24 @@ var colorcode = function () {
 
     $(".time-block").each(function () {
         var timeTest = parseInt($(this).attr("id"));
-        hour =moment().hours();
+        hour = moment().hours();
         console.log(timeTest);
         console.log(hour);
 
-        if (hour > timeTest) {
-            $(this).addClass('future');
+        if (timeTest < hour) {
+            $(this).addClass('past');
+            $(this).removeClass('future');
+            $(this).removeClass('present');
         }
-        else if (hour === timeTest) {
+        else if (timeTest == hour) {
             $(this).addClass("present");
+            $(this).removeClass("past");
+            $(this).removeClass("future")
         }
         else {
-            $(this).addClass("past")
+            $(this).addClass("future");
+            $(this).removeClass("past");
+            $(this).removeClass("present")
         }
     })
 }
