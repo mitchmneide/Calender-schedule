@@ -18,3 +18,6 @@ https://mitchmneide.github.io/Calender-schedule/
 [Moment.js](https://momentjs.com/)
 
 ## Features
+![Site](./assets/feature.gif)
+## License & Copyright 
+© Mitchel J Eide, Coding Bootcamp
